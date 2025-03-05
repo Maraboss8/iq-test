@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>IQ Test - Τεστ Νοημοσύνης</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Κύριο Quiz Container -->
+        <div id="quiz-container" class="fade-in">
+            <div class="quiz-header">
+                <div class="question-info">
+                    <span>Ερώτηση <span id="current-question">1</span> από 20</span>
+                </div>
+                <div class="timer-container">
+                    <i class="fas fa-clock"></i>
+                    <div class="timer" id="timer">20:00</div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="quiz-progress"></div>
+            </div>
+            
+            <div class="quiz-content">
+                <div class="question-section">
+                    <h2 id="question-text" class="question-text"></h2>
+                    <div id="question-image" class="question-image"></div>
+                </div>
+                <div id="options-container" class="options-container"></div>
+            </div>
+
+            <div class="questions-nav">
+                <div class="questions-nav-container" id="questions-nav">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="fade-in" style="display: none;">
+            <h2>Υπολογισμός του σκορ IQ σας...</h2>
+            <p>Περιμένετε λίγο ενώ το AI μας αναλύει τις απαντήσεις σας σε σχέση με τα 5 βασικά μέτρα νοημοσύνης...</p>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="metrics">
+                    <div class="metric"><span class="checkmark">✓</span> Μνήμη</div>
+                    <div class="metric"><span class="checkmark">✓</span> Ταχύτητα</div>
+                    <div class="metric">Αντίδραση</div>
+                    <div class="metric">Συγκέντρωση</div>
+                    <div class="metric">Λογική</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="fade-in" style="display: none;">
+            <h2>Τα Αποτελέσματά σας</h2>
+            <div class="results-container">
+                <div class="iq-score">
+                    <h3>Το IQ σας είναι:</h3>
+                    <div id="final-iq-score"></div>
+                </div>
+                <div class="details">
+                    <p>Σωστές απαντήσεις: <span id="correct-answers">0</span>/20</p>
+                    <p>Χρόνος ολοκλήρωσης: <span id="completion-time">0:00</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
